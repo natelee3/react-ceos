@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Route, Link, useHistory } from "react-router-dom";
-import CeoDetails from "./CeoDetails";
-import './CeoList.css';
+// import CeoDetails from "./CeoDetails";
 import CeoDetailsAsync from './CeoDetailsAsync';
+import StyledList from "./StyledList";
+import StyledButton from './StyledButton';
 
 export default function CeoList() {
   const [ceos, setCeos] = useState([]);
@@ -28,18 +29,18 @@ export default function CeoList() {
       {!!ceos.length ? (
         <>
           <Route exact path="/">
-            <ul> <span>Apple CEOs</span><br/>
+            <StyledList> <span>Apple CEOs</span><br/>
               {ceos.map((ceo, index) => (
                 <li key={index}>
                   <Link to={`/ceo/${ceo.slug}`}>{ceo.name}</Link>
                 </li>
               ))}
-            </ul>
+            </StyledList>
           </Route>
           <Route path="/ceo/:ceo_slug">
               <CeoDetailsAsync />
              {/* <CeoDetails ceoList={ceos} /> */}
-             <button type="button" onClick={() => history.goBack()}>Go Home</button>
+             <StyledButton type="button" onClick={() => history.goBack()}>Go Home</StyledButton>
           </Route>
         </>
       ) : (
