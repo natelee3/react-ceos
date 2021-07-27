@@ -1,0 +1,23 @@
+ul {
+    list-style-type: none;
+}
+
+span {
+    font-size: 22px;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:visited {
+    text-decoration: none;
+    color:black;
+}
+
+li {
+    margin-bottom: .3em;
+}
